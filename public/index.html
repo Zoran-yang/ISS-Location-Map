@@ -9,12 +9,6 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -35,7 +29,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
-    <div id="map" style="height:300px; width:500px"></div>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -48,53 +42,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-  <script>
 
-    //設定太空站ICON
-    let spaceStation = L.icon({
-      iconUrl: 'satellite-solid.svg',
-      iconSize: 20, // size of the icon
-      // iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-      popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-
-
-   
-    async function setIssPosition(){
-      let longitude
-      let latitude
-      let map
-
-      //抓取SSI位置
-      let issPosition = await fetch("http://api.open-notify.org/iss-now.json")
-        .then(response => response.json())
-        .then(pos => {
-          longitude = pos.iss_position.longitude;
-          latitude = pos.iss_position.latitude;
-        });
-
-
-      //產生世界地圖
-      map =await L.map('map', {minZoom: 1,maxZoom: 4}).setView([latitude, longitude], 1);
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
-
-      //設定SSI位置圖像
-      let circle = L.circle([latitude, longitude], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5,
-            radius: 2000000
-      }).addTo(map);
-      L.marker([latitude, longitude], {icon: spaceStation}).addTo(map);
-      
-
-    } 
-
-    setIssPosition()
-
-
-
-  </script>
 </html>
