@@ -2,14 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from "./container/App.js"
+import Header from "./component/Header"
+import Footer from "./component/footer"
 import reportWebVitals from './reportWebVitals';
 // import "tachyons"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1 className ="tc">Space Info.</h1>
+    <Header />
     <App />
+    <Footer />
   </React.StrictMode>
 );
 

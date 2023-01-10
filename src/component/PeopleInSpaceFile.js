@@ -24,15 +24,10 @@ class PeopleInSpaceFile extends Component{
     render(){
         if (this.state.people){
             return(
-                this.state.people.map((person) => {
-                        return <a 
-                                key={person.name} className ="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-black"
-                                href={`https://en.wikipedia.org/wiki/${person.name}`}
-                                onClick = {this.openNewTab}
-                            >{person.name}</a>
-                    }
+                <div>
+                    {this.state.people.map((person) => {return <a key={person.name} className ="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-black" href={`https://en.wikipedia.org/wiki/${person.name}`} onClick = {this.openNewTab}>{person.name}</a>})}
+                </div>
                 )
-            )
         }else {
             return(
                 <h2>On Loading...</h2>

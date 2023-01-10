@@ -1,6 +1,8 @@
 import { Component } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import "./Map.css"
+import "tachyons"
 
 class Map extends Component{
     constructor(){
@@ -67,7 +69,7 @@ class Map extends Component{
 
     render(){
         return (
-            <div id="map" className ="tc" style={{ height: "300px", width: "500px" }} />
+            <div className ="map" id="map" style={{ height: "300px", width: "500px" }} />
         )
     }
 }
