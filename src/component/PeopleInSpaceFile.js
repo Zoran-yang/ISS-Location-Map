@@ -24,7 +24,7 @@ class PeopleInSpaceFile extends Component{
     render(){
         if (this.state.people){
             return(
-                <div>
+                <div className="ml5 mr5 flex flex-wrap justify-center">
                     {this.state.people.map((person) => {return <a key={person.name} className ="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-black" href={`https://en.wikipedia.org/wiki/${person.name}`} onClick = {this.openNewTab}>{person.name}</a>})}
                 </div>
                 )
