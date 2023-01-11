@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ISS-Location-Map/static/css/main.485a2fb4.css",
+    "main.js": "/ISS-Location-Map/static/js/main.9e4d1c6c.js",
+    "static/js/787.034683c3.chunk.js": "/ISS-Location-Map/static/js/787.034683c3.chunk.js",
+    "index.html": "/ISS-Location-Map/index.html",
+    "main.485a2fb4.css.map": "/ISS-Location-Map/static/css/main.485a2fb4.css.map",
+    "main.9e4d1c6c.js.map": "/ISS-Location-Map/static/js/main.9e4d1c6c.js.map",
+    "787.034683c3.chunk.js.map": "/ISS-Location-Map/static/js/787.034683c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.485a2fb4.css",
+    "static/js/main.9e4d1c6c.js"
+  ]
+}
